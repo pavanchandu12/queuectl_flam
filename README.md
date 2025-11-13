@@ -354,7 +354,7 @@ If you're new to this:
 
 ## 📜 License
 
-MIT (or your choice)
+
 
 ---
 
@@ -364,9 +364,7 @@ Pavan Chandu - Backend Internship Assignment
 
 ---
 
-## 🤝 Contributing
 
-Feel free to fork, modify, and improve!
 
 ---
 
