@@ -163,7 +163,7 @@ def status():
     click.echo("-"*50)
     click.echo(f"Total Jobs:       {len(jobs)}")
     click.echo("="*50)
-    click.echo(f"\n⚙️  CONFIG:")
+    click.echo(f"\n[CONFIG]")
     click.echo(f"  Max Retries:    {config.get('max_retries', 3)}")
     click.echo(f"  Backoff Base:   {config.get('backoff_base', 2)}")
     click.echo(f"  Worker Count:   {config.get('worker_count', 1)}")
@@ -187,21 +187,21 @@ def list(state):
         jobs = [job for job in jobs if job['state'] == state]
     
     if not jobs:
-        click.echo("📭 No jobs found!")
+        click.echo("[EMPTY] No jobs found!")
         return
     
     click.echo("\n" + "="*80)
-    click.echo("📋 JOBS LIST")
+    click.echo("[JOBS LIST]")
     click.echo("="*80)
     
     for idx, job in enumerate(jobs, 1):
         state_emoji = {
-            'pending': '⏳',
-            'processing': '⚙️',
-            'completed': '✅',
-            'failed': '❌',
-            'dead': '☠️'
-        }.get(job['state'], '❓')
+            'pending': '[WAIT]',
+            'processing': '[RUN]',
+            'completed': '[OK]',
+            'failed': '[FAIL]',
+            'dead': '[DLQ]'
+        }.get(job['state'], '[?]')
         
         click.echo(f"\n{idx}. {state_emoji} {job['id']}")
         click.echo(f"   State:       {job['state']}")
@@ -264,7 +264,7 @@ def config_show():
     config_data = load_config()
     
     click.echo("\n" + "="*50)
-    click.echo("⚙️  CURRENT CONFIGURATION")
+    click.echo("[CONFIG]")
     click.echo("="*50)
     click.echo(f"max-retries:    {config_data.get('max_retries', 3)}")
     click.echo(f"backoff-base:   {config_data.get('backoff_base', 2)}")
