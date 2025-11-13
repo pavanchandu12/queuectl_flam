@@ -8,7 +8,7 @@ A **CLI-based job queue system** that manages background jobs, handles retries w
 
 ```bash
 # Clone the repository
-git clone https://github.com/pavanchandu12/queuectl.git
+git clone https://github.com/pavanchandu12/queuectl_flam.git
 cd queuectl
 
 # Install dependencies
